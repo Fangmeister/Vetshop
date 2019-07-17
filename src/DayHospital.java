@@ -6,11 +6,8 @@ import animals.Dog;
 import animals.Cat;
 import animals.DogBreed;
 import animals.FurType;
-import animals.OwnerName;
 import veterinary.VetShop;
-import veterinary.Vet;
 import java.util.Random;
-
 public class DayHospital {
 
 	public static void main(String[] args) {
@@ -26,26 +23,24 @@ public class DayHospital {
 		
 		VetShop petInterCare = new VetShop ();
 		
-		
-		while (!temp.equalsIgnoreCase(quit)) {
+		while (!temp.equalsIgnoreCase(quit)) { //With the while loop, if input is equal to q or Q, then the program will only run until "You have quit the vet" and terminated the main program since there are no other lines of program after that
 			temp = input.next();
 			
 			if(temp.equalsIgnoreCase(newDay)) {
-				petInterCare.setCurrentDay(dayNo);
+				petInterCare.setCurrentDay(dayNo); 
 				System.out.println("Clerk on Duty: " + petInterCare.getClerk().getName() + " " + petInterCare.getClerk().getSurname());
 					
-				int newPatient = (int)(Math.random()* 10 + 1); // make 2 into 10 later
+				int newPatient = (int)(Math.random()* 10 + 1); 
 				System.out.println("No. of new animals = " + newPatient);
 				
 				for (int b = 0; b < newPatient; ++ b) {
 					
 					Random species = new Random();
 					boolean speciesRand = species.nextBoolean();
-	//				boolean speciesRand = true; //take this away when introducing cats
 					
 					if(speciesRand == true) {
 						Dog newDog = new Dog (Dog.getRandomDogName(), Animal.getRandomOwnerName(), getRandomWeight(), getRandomHeight(), getRandomStayDuration(), FurType.getRandomFurType(), DogBreed.getRandomDogBreed());
-						System.out.println("Dog Name: " + newDog.name + "; Owner: " + newDog.getOwnerName() + "; Breed: " + newDog.getDogBreed() + "; Stay Duration: " + newDog.stayDuration);
+						System.out.println("Dog Name: " + newDog.name + "; Owner: " + newDog.getOwnerName() + "; Breed: " + newDog.dogBreed + "; Stay Duration: " + newDog.stayDuration);
 						boolean addedDog = petInterCare.addAnimal(newDog);
 						if(addedDog == false) {
 						}
@@ -57,7 +52,7 @@ public class DayHospital {
 					
 					if(speciesRand == false) {
 						Cat newCat = new Cat (Cat.getRandomCatName(), Animal.getRandomOwnerName(), getRandomWeight(), getRandomHeight(), getRandomStayDuration(), FurType.getRandomFurType(), CatBreed.getRandomCatBreed());
-						System.out.println("Cat Name: " + newCat.name + "; Owner: " + newCat.getOwnerName() + "; Breed: " + newCat.getCatBreed() + "; Stay Duration: " + newCat.stayDuration);
+						System.out.println("Cat Name: " + newCat.name + "; Owner: " + newCat.getOwnerName() + "; Breed: " + newCat.catBreed + "; Stay Duration: " + newCat.stayDuration);
 						boolean addedCat = petInterCare.addAnimal(newCat);
 						if(addedCat == false) {
 						}
@@ -79,7 +74,7 @@ public class DayHospital {
 			
 			if(temp.equalsIgnoreCase(quit)) { //should end application
 				System.out.println("You have left the Vet");
-	//			System.exit(0);
+	//			System.exit(0); this is not required with the while loop implemented
 			}
 		}
 	}
