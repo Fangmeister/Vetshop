@@ -283,8 +283,11 @@ public class VetShop {
 	}
 	
 	/**
-	 * Returns the clerk that 
-	 * @return
+	 * Sets the clerk that is on duty at day currentDayNo.
+	 * The three clerks from the clerks [] are on set rotation every day.
+	 * Since there are three clerks, each clerk appears every three days.
+	 * The modulus operator is used as the currentDayNo % 3 will be equal to the index of the clerk in the []
+	 * @return	the clerk that is on duty
 	 */
 	public Clerk getClerk() {
 		Clerk clerkOnDuty;
@@ -297,6 +300,10 @@ public class VetShop {
 		throw new java.lang.Error("Our Clerk Maths is bad");
 	}
 	
+	/**
+	 * Sets the integer currentDayNo to be the same as the input parameter dayNo
+	 * @param dayNo	integer day number; an additional day number signifies a new day
+	 */
 	public void setCurrentDay(int dayNo) {
 		currentDayNo = dayNo;
 	}
