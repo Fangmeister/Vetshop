@@ -6,7 +6,7 @@ import veterinary.Clerk;
 
 public class Animal {
 	
-	/**
+	/*
 	 * assignedVet, checkinClerk and checkoutClerk are not part of the Animal constructor. This is because when a new Animal instance is created, 
 	 * the Vet, Check in Clerk and the Check out Clerk are not assigned yet. The new animal needs to be checked against kennel availability before
 	 * it is assigned the above. 
@@ -22,9 +22,7 @@ public class Animal {
 	public Clerk checkoutClerk;
 	public FurType furType;
 	
-	/**
-	 * ownerNameList is a string array that contains a list of possible names of owners for the animals. 
-	 */
+	//ownerNameList is a string array that contains a list of possible names of owners for the animals. 
 	public static String[] ownerNameList = {
 			"Emma",
 			"Olivia",

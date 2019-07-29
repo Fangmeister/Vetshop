@@ -2,13 +2,12 @@ package animals;
 
 import java.util.Random;
 
+
 public class Cat extends Animal {
-	
-	/**
-	 * CatBreed enum catBreed is defined for the Cat Class. It is used in the Cat constructor.
-	 * catName is a string array which contains the list of possible names for cats.
-	 */
+
+	//CatBreed enum catBreed is defined for the Cat Class. It is used in the Cat constructor.
 	public CatBreed catBreed;
+	//catName is a string array which contains the list of possible names for cats.	
 	public static String[] catName = {
 			"Oliver", 
 			"Leo", 
@@ -53,8 +52,8 @@ public class Cat extends Animal {
 	 * @return The catName list variable at the random index generated
 	 */
 	public static String getRandomCatName() {
-	Random random = new Random();
-	int size = catName.length;
-	return catName[random.nextInt(size)];
+		Random random = new Random();
+		int size = catName.length;
+		return catName[random.nextInt(size)];
 	}
 }

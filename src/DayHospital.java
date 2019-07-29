@@ -16,22 +16,17 @@ public class DayHospital {
 		String quit = "q";
 		String audit = "a";
 		int dayNo = 0;
-		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter your input please: ");
 		
-		/**
-		 * A new instance of VetShop, petInterCare, is created
-		 */
+		//A new instance of VetShop, petInterCare, is created
 		VetShop petInterCare = new VetShop ();
 		
-		/**
-		 * A while loop that runs as long as the console input is not equal to q or Q
-		 */
+		//A while loop that runs as long as the console input is not equal to q or Q
 		while (!temp.equalsIgnoreCase(quit)) { //With the while loop, if input is equal to q or Q, then the program will only run until "You have quit the vet" and terminated the main program since there are no other lines of program after that
 			temp = input.next();
 			
-			/**
+			/*
 			 * If the console input is equal to r/R, then a new day is simulated in the VetShop instance.
 			 * The current day number starts at 0 at the first day simulated.
 			 * There is a text output stating the name and surname of the Clerk on duty, after the getClerk() function is invoked to determine the Clerk on duty.
@@ -91,7 +86,7 @@ public class DayHospital {
 				++dayNo;
 			}
 			
-			/**
+			/*
 			 * If the input is equal to a/A, an audit simulation is run on the current kennel status and vet status.
 			 * The function auditKennels() is invoked.
 			 * The system displays the animals for the Dog Kennels, General Kennels and Cat Kennels with the following information:
@@ -105,21 +100,19 @@ public class DayHospital {
 			 *  - Breed
 			 *  - Fur Type
 			 *  - Weight
-			 * The animals contained in the kennels array should be the same as what is assigned to the vets.
-			 * Note that vets are assigned animals by preference of least number of animals per vet first, so the kennel arrays and vet arrays will not correspond to each other.
-			 * Rather the unique animal instances in the kennels array should be same as the unique animal instances in the vet arrays.
+			 * The animals contained in the kennel arrays should be the same as what is assigned to the vets assigned animals array list.
+			 * Note that vets are assigned animals based on how many animals they have currently assigned to them. 
+			 * Thus the animals will not appear in the same order in the kennel arrays as they would appear in the vet array lists.
 			 */
 			if(temp.equalsIgnoreCase(audit)) {
 				petInterCare.auditKennels();
 			}
 			
-			/**
-			 * If the input is equal to q/R, the main program is terminated.
-			 */
+			//If the input is equal to q/R, the main program is terminated.
 			if(temp.equalsIgnoreCase(quit)) { //should end application
 				System.out.println("You have left the Vet");
 				input.close();
-	//			System.exit(0); this is not required with the while loop implemented
+				//System.exit(0); this is not required with the while loop implemented
 			}
 		}
 	}
@@ -129,12 +122,12 @@ public class DayHospital {
 	 * @return	A random float, weight
 	 */
 	public static float getRandomWeight() {
-		float weight = (float)(Math.random()*20+3);
+		float weight = (float)(Math.random()*17+3);
 		return weight;
 	}
 	
 	/**
-	 * Returns a random float between the floats 1.1 and 0.2
+	 * Returns a random float between the floats 0.2 and 1.3
 	 * @return	A random float, height
 	 */
 	public static float getRandomHeight() {
@@ -147,7 +140,7 @@ public class DayHospital {
 	 * @return	A random integer, stay duration
 	 */
 	public static int getRandomStayDuration() {
-		int stayDuration = (int)(Math.random()*4+1);
+		int stayDuration = (int)(Math.random()*3+1);
 		return stayDuration;
 	}	
 }

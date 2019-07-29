@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import animals.Animal;
 
 public class Vet extends Employee {
-	/**
+	/*
 	 * Since each instance of the veterinary is to have a number of animals assigned and discharged based on kennel availability and remaining stay duration,
 	 * the number and instance of animals that each veterinary has been assigned will change daily. The ArrayList assignedAnimals is defined for the Vet Class to manage
 	 * the assigned animals.

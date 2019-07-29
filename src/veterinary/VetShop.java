@@ -7,21 +7,19 @@ import java.util.List;
 import java.util.Random;
 
 public class VetShop {
-	/**
-	 * Dog Kennel Array is reserved for Dog Class instances and has a length of 10
-	 * Cat Kennel Array is reserved for Cat Class instances and has a length of 8
-	 * General Kennel Array can be used for either dogs or cats (Animal) and has a length of 6
-	 * There are a total of 4 vets in the vets Array
-	 * There are a total of 3 clerks in the clerks Array
-	 * Integer currentDayNo is used to keep track of the Day number every time the main method is executed and a new day is simulated (text input = r/R)
-	 * Integer min is used as a initial parameter for the getVet() function to determine the least number of animal assigned to a vet
-	 */
+	//Dog Kennel Array is reserved for Dog Class instances and has a length of 10
 	Dog[] dogKennels = new Dog[10];
+	//Cat Kennel Array is reserved for Cat Class instances and has a length of 8
 	Cat[] catKennels = new Cat[8];
+	//General Kennel Array can be used for either dogs or cats (Animal) and has a length of 6
 	Animal[] generalKennels = new Animal[6];
+	//There are a total of 4 vets in the vets Array
 	public Vet [] vets = new Vet[4];
+	//There are a total of 3 clerks in the clerks Array
 	public Clerk [] clerks = new Clerk [3];
+	//Integer currentDayNo is used to keep track of the Day number every time the main method is executed and a new day is simulated (text input = r/R)
 	protected int currentDayNo;
+	//Integer min is used as a initial parameter for the getVet() function to determine the least number of animal assigned to a vet
 	int min;
 	
 	/**

@@ -4,11 +4,9 @@ import java.util.Random;
 
 public class Dog extends Animal {
 	
-  /**
-   * DogBreed enum dogBreed is defined for the Dog Class. It is used in the Dog constructor.
-   * dogName is a string array which contains the list of possible names for dogs.
-   */
+	//DogBreed enum dogBreed is defined for the Dog Class. It is used in the Dog constructor.
   public DogBreed dogBreed;
+  //dogName is a string array which contains the list of possible names for dogs.
 	public static String[] dogName = {
     		"Charlie", 
     		"Max", 
@@ -52,8 +50,8 @@ public class Dog extends Animal {
 	 * @return the dogName list variable at the random index generated
 	 */
 	public static String getRandomDogName() {
-	Random random = new Random();
-	int size = dogName.length;
-	return dogName[random.nextInt(size)];
+		Random random = new Random();
+		int size = dogName.length;
+		return dogName[random.nextInt(size)];
 	}
 }
