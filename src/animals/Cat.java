@@ -1,11 +1,13 @@
 package animals;
 
 import java.util.Random;
-import veterinary.Vet;
+
 
 public class Cat extends Animal {
-	
+
+	//CatBreed enum catBreed is defined for the Cat Class. It is used in the Cat constructor.
 	public CatBreed catBreed;
+	//catName is a string array which contains the list of possible names for cats.	
 	public static String[] catName = {
 			"Oliver", 
 			"Leo", 
@@ -30,30 +32,28 @@ public class Cat extends Animal {
 	};
 	
 	
+	/**
+	 * Creates an instance of the Cat class, which is a subclass of the Animal class. Cat has one additional parameter to Animal: Cat Breed.
+	 * @param catNameIn				The name of the cat
+	 * @param ownerNameIn			The name of the owner
+	 * @param weightIn				The weight of the cat
+	 * @param heightIn				The height of the cat
+	 * @param stayDurationIn	The stay duration of the cat
+	 * @param furTypeIn				The fur type of the cat
+	 * @param catBreedIn			The breed of the cat (enum)
+	 */
 	public Cat(String catNameIn, String ownerNameIn, float weightIn, float heightIn, int stayDurationIn, FurType furTypeIn, CatBreed catBreedIn) {
 		super(catNameIn, ownerNameIn, weightIn, heightIn, stayDurationIn, furTypeIn);
 		catBreed = catBreedIn;
 	}
-	
-	public int getStayDuration () {
-		return stayDuration;
-	}
-	
-	public String getCatName() {
-		return name;
-	}
-	
-	public float getWeight() {
-		return weight;
-	}
-	
-	public CatBreed getCatBreed() {
-		return catBreed;
-	}
-	
+		
+	/**
+	 * Generates a random cat name from the string array catName. A random index of the array is generated.
+	 * @return The catName list variable at the random index generated
+	 */
 	public static String getRandomCatName() {
-	Random random = new Random();
-	int size = catName.length;
-	return catName[random.nextInt(size)];
+		Random random = new Random();
+		int size = catName.length;
+		return catName[random.nextInt(size)];
 	}
 }
